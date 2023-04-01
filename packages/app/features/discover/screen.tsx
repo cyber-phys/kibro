@@ -1,4 +1,4 @@
-import { Anchor, Button, H1, Input, Paragraph, Separator, Sheet, XStack, YStack } from '@my/ui'
+import { Anchor, Button, H1, Input, Paragraph, Separator, Sheet, XStack, YStack, ScrollView } from '@my/ui'
 import React, { useState, useEffect } from 'react'
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
@@ -30,15 +30,17 @@ export function DiscoverScreen() {
 
   return (
     <>
-    <YStack bg="$background3" f={1} jc="center" ai="center" p="$4" space>
-      <YStack space="$4" maw={600}>
-        <H1 color="$primary1" ta="center">Discover</H1>
-        {events.map((event) => (
-          <EventCard key={event.id} event={event} />
-        ))}
+    <ScrollView>
+      <YStack bg="$background3" f={1} jc='flex-start' ai='center' p="$4" space>
+        {/* <YStack space="$4"> */}
+          {/* <H1 color="$primary1" ta="center">Discover</H1> */}
+          {events.map((event, index) => (
+            <EventCard key={event.id} event={event} bgColor={index % 2 === 0 ? 'grey' : 'white'} />
+          ))}
+        {/* </YStack> */}
       </YStack>
-    </YStack>
+    </ScrollView>
     <Navbar />
-  </>
-  )
+    </>
+  );
 }

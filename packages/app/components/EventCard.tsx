@@ -23,18 +23,37 @@ import {
   } from 'tamagui';
 import { ChevronLeft, Swords, ImagePlus, Grid, Edit, Menu, User } from '@tamagui/lucide-icons'
 
-import { ContainerLarge } from '../components/Container';
+import { ContainerXL } from '../components/Container';
 import { EventType } from '../components/EventType';
 
-export function EventCard({ event }: { event: EventType}) {
+export function EventCard({ event, bgColor }: { event: EventType; bgColor: 'grey' | 'white' }) {
+    const startDate = new Date(event.start_time).toLocaleDateString('en-US', {
+        month: '2-digit',
+        day: '2-digit',
+        year: '2-digit',
+      });
+      const startTimeCompact = new Date(event.start_time).toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      });
+      const endTimeCompact = new Date(event.end_time).toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+      });
+
+    const backgroundColor = bgColor === 'grey' ? '$background2' : '$background1';
+
     return (
-          <ContainerLarge>
-            <YStack bc="$background">
-                <H2>{event.title}</H2>
-                <H3>{event.start_time}</H3>
-                <H3>{event.end_time}</H3>
-                <H4>{event.description}</H4>
-            </YStack>
-          </ContainerLarge> 
-    )
+        <ContainerXL bg={backgroundColor} space p="$4">
+            <H4>{event.title}</H4>
+            <XStack justifyContent='space-between'>
+                <Text>{startDate}</Text>
+                <Text>{startTimeCompact} - {endTimeCompact}</Text>
+            </XStack>
+            <Text>{event.location}</Text>
+            <Text>{event.description}</Text>
+        </ContainerXL>
+    );  
 }
