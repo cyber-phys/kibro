@@ -3112,6 +3112,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@react-native-community/datetimepicker@npm:^7.0.0":
+  version: 7.0.0
+  resolution: "@react-native-community/datetimepicker@npm:7.0.0"
+  dependencies:
+    invariant: ^2.2.4
+  checksum: 2a92cfa30b8ea90699ff53cc5ee89f442106290dece29a5a8f0cabccfc023c0e1a98d5e8448b4d6181a2e573799e6b81f78ef1113dd5491c279cf0edc100332a
+  languageName: node
+  linkType: hard
+
 "@react-native/assets@npm:1.0.0":
   version: 1.0.0
   resolution: "@react-native/assets@npm:1.0.0"
@@ -8310,6 +8319,7 @@ __metadata:
     "@expo/metro-config": ^0.3.21
     "@my/ui": "*"
     "@react-native-async-storage/async-storage": ^1.18.1
+    "@react-native-community/datetimepicker": ^7.0.0
     "@react-navigation/native": ^6.0.11
     "@react-navigation/native-stack": ^6.7.0
     "@tamagui/babel-plugin": 1.7.7
