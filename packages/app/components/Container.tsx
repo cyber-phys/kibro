@@ -9,6 +9,29 @@ const variants = {
   },
 } as const
 
+export const ContainerMini = styled(YStack, {
+  mx: 'auto',
+  px: '$4',
+  width: '25%',
+
+  $gtSm: {
+    maxWidth: 200,
+    pr: '$2',
+  },
+
+  $gtMd: {
+    maxWidth: 240,
+    pr: '$2',
+  },
+
+  $gtLg: {
+    maxWidth: 300,
+    pr: '$10',
+  },
+
+  variants,
+})
+
 export const Container = styled(YStack, {
   mx: 'auto',
   px: '$4',
