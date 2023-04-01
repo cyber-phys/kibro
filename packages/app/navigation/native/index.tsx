@@ -7,6 +7,9 @@ import { EmailSignInScreen } from '../../features/email_signin/screen'
 import { EmailSignUpScreen } from '../../features/email_signup/screen'
 import { DiscoverScreen } from '../../features/discover/screen'
 import { CreateEventScreen } from '../../features/create_event/screen'
+import { CalendarScreen } from 'app/features/calendar/screen'
+import { CommunityScreen } from 'app/features/community/screen'
+import { ProfileScreen } from 'app/features/profile/screen'
 
 const Stack = createNativeStackNavigator<{
   home: undefined
@@ -16,6 +19,9 @@ const Stack = createNativeStackNavigator<{
   email_signup: undefined
   discover: undefined
   create_event: undefined
+  calendar: undefined
+  community: undefined
+  profile: undefined
 }>()
 
 export function NativeNavigation() {
@@ -61,6 +67,7 @@ export function NativeNavigation() {
         component={DiscoverScreen}
         options={{
           title: 'Discover Screen',
+          animation: 'none',
         }}
       />
       <Stack.Screen
@@ -68,6 +75,31 @@ export function NativeNavigation() {
         component={CreateEventScreen}
         options={{
           title: 'Create Events Screen',
+          animation: 'none',
+        }}
+      />
+      <Stack.Screen
+        name="calendar"
+        component={CalendarScreen}
+        options={{
+          title: 'Calendar Screen',
+          animation: 'none',
+        }}
+      />
+      <Stack.Screen
+        name="community"
+        component={CommunityScreen}
+        options={{
+          title: 'Community Screen',
+          animation: 'none',
+        }}
+      />
+      <Stack.Screen
+        name="profile"
+        component={ProfileScreen}
+        options={{
+          title: 'Profile Screen',
+          animation: 'none',
         }}
       />
     </Stack.Navigator>

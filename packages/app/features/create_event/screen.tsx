@@ -2,6 +2,8 @@ import { Anchor, Button, H1, H4, Input,TextArea,Paragraph, Separator, Sheet, XSt
 import React, { useState } from 'react'
 import { useLink } from 'solito/link'
 
+import { Navbar } from 'app/components/Navbar'
+
 const Screen1 = ({ setScreen, formData, setFormData }) => {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
@@ -25,6 +27,7 @@ const Screen1 = ({ setScreen, formData, setFormData }) => {
 
       <Button size="$2" bg='$highlight1' onPress={handelNext}>Next</Button>
     </YStack>
+    <Navbar/>
     </>
   )
 }
