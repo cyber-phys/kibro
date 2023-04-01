@@ -2,7 +2,7 @@ import { Anchor, Button, H1, Input, Paragraph, Separator, Sheet, XStack, YStack 
 import React, { useState } from 'react'
 import { useLink } from 'solito/link'
 
-export function emailSignInScreen() {
+export function EmailSignInScreen() {
   const signInProps = useLink({
     href: '/signin',
   })

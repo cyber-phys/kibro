@@ -44,7 +44,7 @@ To run with optimizer on in dev mode (just for testing, it's faster to leave it 
 
 To see debug output to verify the compiler, add `// debug` as a comment to the top of any file.
 
-- Expo local dev: `yarn native`
+- Expo local dev: `yarn native`, might need to run `open -a Simulator && expo start`
 
 
 ## Developing

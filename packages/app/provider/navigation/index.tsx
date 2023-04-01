@@ -16,6 +16,12 @@ export function NavigationProvider({ children }: { children: React.ReactNode }) 
             screens: {
               home: '',
               'user-detail': 'user/:id',
+              signin: 'signin',
+              create_account: 'create_account',
+              email_signin: 'email_signin',
+              email_signup: 'email_signup',
+              create_event: 'create_event',
+              discover: 'discover',
             },
           },
         }),

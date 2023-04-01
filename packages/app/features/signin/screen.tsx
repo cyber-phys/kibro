@@ -8,11 +8,11 @@ export function SignInScreen() {
   })
 
   const createAccountProps = useLink({
-    href: '/create-account',
+    href: '/create_account',
   })
 
   const emailSignInProps = useLink({
-    href: '/emailsignin',
+    href: '/email_signin',
   })
 
   return (

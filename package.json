@@ -38,6 +38,7 @@
   },
   "packageManager": "yarn@3.3.1",
   "devDependencies": {
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "dotenv-cli": "^7.1.0",
     "supabase": "^1.46.5"
   }

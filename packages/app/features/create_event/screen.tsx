@@ -77,17 +77,11 @@ const Screen3 = ({ setScreen, formData, setFormData, submitRequest }) => {
   )
 }
 
-export function createEventScreen() {
+export function CreateEventScreen() {
   const [screen, setScreen] = useState(1)
   const [formData, setFormData] = useState({})
   
   const submitRequest = async (formData) => {
-    const { data, error } = await supabase
-    .from('events')
-    .insert([
-      { title: formData.title, 
-        description: 'otherValue. },
-    ])
   }
 
   return (

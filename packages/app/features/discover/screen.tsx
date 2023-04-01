@@ -2,7 +2,7 @@ import { Anchor, Button, H1, Input, Paragraph, Separator, Sheet, XStack, YStack 
 import React, { useState } from 'react'
 import { useLink } from 'solito/link'
 
-export function discoverScreen() {
+export function DiscoverScreen() {
   const signInProps = useLink({
     href: '/signin',
   })
@@ -12,7 +12,7 @@ export function discoverScreen() {
   })
 
   const emailSignUpProps = useLink({
-    href: '/emailsignup',
+    href: '/email_signup',
   })
 
   return (

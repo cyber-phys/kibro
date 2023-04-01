@@ -4,11 +4,11 @@ import { useLink } from 'solito/link'
 
 export function HomeScreen() {
   const signInProps = useLink({
-    href: '/signin',
+    href: "/signin",
   })
 
   const createAccountProps = useLink({
-    href: '/createaccount',
+    href: "/create_account",
   })
 
   return (

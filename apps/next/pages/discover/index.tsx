@@ -1,3 +1,3 @@
-import { discoverScreen } from 'app/features/discover/screen'
+import { DiscoverScreen } from 'app/features/discover/screen'
 
-export default discoverScreen
+export default DiscoverScreen
