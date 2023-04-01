@@ -2,6 +2,9 @@ import { Anchor, Button, H1, H4, Input,TextArea,Paragraph, Separator, Sheet, XSt
 import React, { useState, useRef } from 'react'
 import { useLink } from 'solito/link'
 import DatePicker from '@react-native-community/datetimepicker';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import { v4 as uuidv4 } from 'uuid';
+import { useRouter } from 'solito/router';
 
 import { Navbar } from 'app/components/Navbar'
 
@@ -35,7 +38,6 @@ const Screen1 = ({ setScreen, formData, setFormData }) => {
 
 const Screen2 = ({ setScreen, formData, setFormData }) => {
   const [numPeople, setNumPeople] = useState(0)
-  // const numPeople = useRef(0);
   const [startTime, setStartTime] = useState(new Date())
   const [endTime, setEndTime] = useState(new Date())
 
@@ -48,7 +50,6 @@ const Screen2 = ({ setScreen, formData, setFormData }) => {
   }
 
   const handleNumPeopleChange = (value) => {
-    // numPeople.current = value;
     setNumPeople(value)
   };
 
@@ -83,14 +84,14 @@ const Screen2 = ({ setScreen, formData, setFormData }) => {
       <DatePicker
         modal
         mode='datetime'
-        open={startTimeOpen}
-        value={startTime}
-        onConfirm={(startTime) => {
-          setStartTimeOpen(false)
-          setStartTime(startTime)
+        open={endTimeOpen}
+        value={endTime}
+        onConfirm={(endTime) => {
+          setEndTimeOpen(false)
+          setEndTime(endTime)
         }}
         onCancel={() => {
-          setStartTimeOpen(false)
+          setEndTimeOpen(false)
         }}
       />
       
@@ -102,11 +103,12 @@ const Screen2 = ({ setScreen, formData, setFormData }) => {
 
 const Screen3 = ({ setScreen, formData, setFormData, submitRequest }) => {
   const [location, setLocation] = useState('')
+  const { push } = useRouter();
 
   const handelNext = () => {
     setFormData({ ...formData, location})
     submitRequest({ ...formData, location})
-    setScreen(4)
+    push('/discover')
   }
 
   return (
@@ -114,7 +116,6 @@ const Screen3 = ({ setScreen, formData, setFormData, submitRequest }) => {
     <YStack bg='$background3' f={1} p="$4" space>
       <H4 color='$text1' ta="left">Event location</H4>
       <Input size="$4"></Input>
-
       <Button size="$2" bg='$highlight1' onPress={handelNext}>Create Event</Button>
     </YStack>
     </>
@@ -124,8 +125,24 @@ const Screen3 = ({ setScreen, formData, setFormData, submitRequest }) => {
 export function CreateEventScreen() {
   const [screen, setScreen] = useState(1)
   const [formData, setFormData] = useState({})
+
+  const session = useSession();
+  const supabase = useSupabaseClient();
   
   const submitRequest = async (formData) => {
+    const id = uuidv4();
+    const { data, error } = await supabase
+    .from('events')
+    .insert([
+      { id: id,
+        title: formData.title, 
+        description: formData.description,
+        number_people_max: formData.numPeople,
+        start_time: formData.startTime,
+        end_time: formData.endTime,
+        location: formData.location
+      },
+    ])
   }
 
   return (
