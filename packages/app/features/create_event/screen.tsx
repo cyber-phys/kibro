@@ -37,7 +37,7 @@ const Screen1 = ({ setScreen, formData, setFormData }) => {
 }
 
 const Screen2 = ({ setScreen, formData, setFormData }) => {
-  const [numPeople, setNumPeople] = useState(0)
+  const [maxPeople, setMaxPeople] = useState(0)
   const [startTime, setStartTime] = useState(new Date())
   const [endTime, setEndTime] = useState(new Date())
 
@@ -45,20 +45,20 @@ const Screen2 = ({ setScreen, formData, setFormData }) => {
   const [endTimeOpen, setEndTimeOpen] = useState(false)
 
   const handelNext = () => {
-    setFormData({ ...formData, numPeople, startTime, endTime})
+    setFormData({ ...formData, maxPeople, startTime, endTime})
     setScreen(3)
   }
 
-  const handleNumPeopleChange = (value) => {
-    setNumPeople(value)
+  const handlemaxPeopleChange = (value) => {
+    setMaxPeople(value)
   };
 
   return (
     <>
     <YStack bg='$background3' f={1} p="$4" space>
       <H4 color='$text1' ta="left">With how many people?</H4>
-      <H4 color='$text1' ta="left">{numPeople}</H4>
-      <Slider defaultValue={[50]} max={100} step={1} onValueChange={handleNumPeopleChange}>
+      <H4 color='$text1' ta="left">{maxPeople}</H4>
+      <Slider defaultValue={[50]} max={100} step={1} onValueChange={handlemaxPeopleChange}>
         <Slider.Track>
           <Slider.TrackActive />
         </Slider.Track>
@@ -137,7 +137,7 @@ export function CreateEventScreen() {
       { id: id,
         title: formData.title, 
         description: formData.description,
-        number_people_max: formData.numPeople,
+        max_people: formData.maxPeople,
         start_time: formData.startTime,
         end_time: formData.endTime,
         location: formData.location
