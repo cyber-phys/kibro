@@ -138,6 +138,7 @@ export function CreateEventScreen() {
         title: formData.title, 
         description: formData.description,
         max_people: formData.maxPeople,
+        current_people: 1,
         start_time: formData.startTime,
         end_time: formData.endTime,
         location: formData.location
