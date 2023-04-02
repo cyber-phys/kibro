@@ -44,3 +44,4 @@ thumbs.db
 
 #env
 .env
+.prod.env

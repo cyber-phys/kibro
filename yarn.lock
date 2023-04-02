@@ -5249,6 +5249,7 @@ __metadata:
     "@types/react-native": ^0.70.8
     expo-constants: ^14.0.2
     expo-linking: ^3.2.3
+    lodash: ^4.17.21
     solito: ^2.3.0
   languageName: unknown
   linkType: soft

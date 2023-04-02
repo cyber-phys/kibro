@@ -44,6 +44,7 @@ export interface Database {
           location: string | null
           max_people: number | null
           start_time: string | null
+          tags: string[] | null
           title: string | null
         }
         Insert: {
@@ -51,10 +52,11 @@ export interface Database {
           current_people?: number | null
           description?: string | null
           end_time?: string | null
-          id: string
+          id?: string
           location?: string | null
           max_people?: number | null
           start_time?: string | null
+          tags?: string[] | null
           title?: string | null
         }
         Update: {
@@ -66,6 +68,7 @@ export interface Database {
           location?: string | null
           max_people?: number | null
           start_time?: string | null
+          tags?: string[] | null
           title?: string | null
         }
       }
@@ -79,7 +82,7 @@ export interface Database {
         Insert: {
           category: string
           icon: string
-          id: string
+          id?: string
           title: string
         }
         Update: {

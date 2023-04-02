@@ -19,6 +19,7 @@
     "@tamagui/themes": "^1.7.7",
     "expo-constants": "^14.0.2",
     "expo-linking": "^3.2.3",
+    "lodash": "^4.17.21",
     "solito": "^2.3.0"
   },
   "devDependencies": {
