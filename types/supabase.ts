@@ -69,6 +69,26 @@ export interface Database {
           title?: string | null
         }
       }
+      tags: {
+        Row: {
+          category: string
+          icon: string
+          id: string
+          title: string
+        }
+        Insert: {
+          category: string
+          icon: string
+          id: string
+          title: string
+        }
+        Update: {
+          category?: string
+          icon?: string
+          id?: string
+          title?: string
+        }
+      }
       userevents: {
         Row: {
           event_id: string
