@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
-import { EventType } from '../components/EventType';
+import { EventType } from '../../../types/event';
 import { EventCardMini } from '../components/EventCardMini';
 import { H1, H2, H4, YStack, Separator, XStack} from 'tamagui';
 

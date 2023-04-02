@@ -4,7 +4,7 @@ import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
 import { Navbar } from '../../components/Navbar'
 import { EventCard } from '../../components/EventCard'
-import { EventType } from '../../components/EventType'
+import { EventType } from '../../../../types/event'
 
 export function DiscoverScreen() {
   const session = useSession();

@@ -24,7 +24,7 @@ import {
 import { ChevronLeft, Swords, ImagePlus, Grid, Edit, Menu, User } from '@tamagui/lucide-icons'
 
 import { ContainerXL } from '../components/Container';
-import { EventType } from '../components/EventType';
+import { EventType } from '../../../types/event';
 
 export function EventCardMini({ event }: { event: EventType }) {
     const startDate = new Date(event.start_time).toLocaleDateString('en-US', {
