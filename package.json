@@ -17,7 +17,8 @@
     "postinstall": "yarn build",
     "build": "yarn workspaces foreach --exclude next-app -pi run build",
     "upgrade:tamagui": "manypkg upgrade tamagui && manypkg upgrade @tamagui && manypkg upgrade tamagui-loader && manypkg upgrade react-native-web-lite",
-    "update-types": "npx supabase gen types typescript --project-id \"$PROJECT_ID\" > types/supabase.ts"
+    "update-types:prod": "npx supabase gen types typescript --project-id \"$PROJECT_ID\" > types/supabase.ts",
+    "update-types:dev": "npx supabase gen types typescript --local > types/supabase.ts"
   },
   "resolutions": {
     "@types/react-native": "0.70.8",
