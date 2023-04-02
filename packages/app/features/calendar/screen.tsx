@@ -8,7 +8,7 @@ export function CalendarScreen() {
 
   return (
     <>
-      <YStack bg="$background3" f={1} jc='space-between' ai='flex-start' p="$4" space>
+      <YStack bg="$background3" f={1} jc='space-between' ai='flex-start' space>
         <WeekViewScreen/>
       </YStack>
       <Navbar/>

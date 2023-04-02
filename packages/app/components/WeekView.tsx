@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
 import { EventType } from '../../../types/event';
 import { EventCardMini } from '../components/EventCardMini';
-import { H1, H2, H4, YStack, Separator, XStack} from 'tamagui';
+import { H1, H2, H4, YStack, Separator, XStack, ScrollView} from 'tamagui';
 
 function getDaysArray(start: Date, end: Date) {
   const daysArray: Date[] = [];
@@ -47,14 +47,15 @@ export function WeekViewScreen() {
     <Separator als='stretch' width="100%" />
     {daysArray.map((day, index) => (
     <>
-        <XStack >
+        <XStack f={7}>
             <H4>
                 {day.toLocaleDateString('en-US', {
                     weekday: 'short',
                     day: 'numeric',
                     })}
             </H4>
-            <YStack jc='center' ai='center' key={index} space p='$4'>
+            <ScrollView horizontal>
+            <XStack jc='center' ai='center' key={index} space>
                 {events
                 .filter((event) => {
                 const eventDate = new Date(event.start_time);
@@ -64,7 +65,8 @@ export function WeekViewScreen() {
                 .map((event) => (
                 <EventCardMini key={event.id} event={event} />
                 ))}
-            </YStack>
+            </XStack>
+            </ScrollView>
         </XStack>
         <Separator als='stretch' width="100%" />
         </>

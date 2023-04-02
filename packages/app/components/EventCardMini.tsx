@@ -44,7 +44,7 @@ export function EventCardMini({ event }: { event: EventType }) {
       });
 
     return (
-        <ContainerXL bg='$red10' space p="$4">
+        <ContainerXL bg='$red10' space p="$4" margin="$4">
             <H4>{event.title}</H4>
             <Text>{startTimeCompact} - {endTimeCompact}</Text>
         </ContainerXL>
