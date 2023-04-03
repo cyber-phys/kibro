@@ -13,6 +13,7 @@ import { ProfileScreen } from 'app/features/profile/screen'
 import { EventScreen } from 'app/features/event/detail-screen'
 import { CreateUserScreen } from 'app/features/create_user/screen'
 import { animations } from '@my/ui/dist/cjs/animations'
+import { TagCardTitle } from 'app/components/TagCard'
 
 const Stack = createNativeStackNavigator<{
   home: undefined
@@ -38,91 +39,148 @@ export function NativeNavigation() {
         name="home"
         component={HomeScreen}
         options={{
-          title: 'Home',
+          title: '',
+          headerStyle: {
+            backgroundColor: '#00C1B5'
+          },
+          headerTintColor: '#fff',
         }}
       />
       <Stack.Screen
         name="signin"
         component={SignInScreen}
         options={{
-          title: 'Sign In',
+          title: '',
+          headerStyle: {
+            backgroundColor: '#FFDE2D'
+          },
+          headerTintColor: '#fff',
         }}
       />
       <Stack.Screen
         name="create_account"
         component={CreateAccountScreen}
         options={{
-          title: 'Create Account',
+          title: '',
+          headerStyle: {
+            backgroundColor: '#FFDE2D'
+          },
+          headerTintColor: '#fff',
         }}
       />
       <Stack.Screen
         name="email_signin"
         component={EmailSignInScreen}
         options={{
-          title: 'Email Sign In',
+          title: '',
+          headerStyle: {
+            backgroundColor: '#FFDE2D'
+          },
+          headerTintColor: '#fff',
         }}
       />
       <Stack.Screen
         name="email_signup"
         component={EmailSignUpScreen}
         options={{
-          title: 'Email Sign Up',
+          title: '',
+          headerStyle: {
+            backgroundColor: '#FFDE2D'
+          },
+          headerTintColor: '#fff',
         }}
       />
       <Stack.Screen
         name="discover"
         component={DiscoverScreen}
         options={{
-          title: 'Discover Screen',
-          animation: 'none',
+          title: 'Discover Events',
+          headerStyle: {
+            backgroundColor: '#00C1B5'
+          },
+          headerTintColor: '#fff',
+          animation: 'fade',
+          headerBackVisible: false,
+          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
         name="create_event"
         component={CreateEventScreen}
         options={{
-          title: 'Create Events Screen',
-          animation: 'none',
+          title: 'Create Event',
+          headerStyle: {
+            backgroundColor: '#00C1B5'
+          },
+          headerTintColor: '#fff',
+          animation: 'fade',
+          headerBackVisible: false,
+          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
         name="calendar"
         component={CalendarScreen}
         options={{
-          title: 'Calendar Screen',
-          animation: 'none',
+          title: 'Week View',
+          headerStyle: {
+            backgroundColor: '#00C1B5'
+          },
+          headerTintColor: '#fff',
+          animation: 'fade',
+          headerBackVisible: false,
+          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
         name="community"
         component={CommunityScreen}
         options={{
-          title: 'Community Screen',
-          animation: 'none',
+          title: 'Community',
+          headerStyle: {
+            backgroundColor: '#00C1B5'
+          },
+          headerTintColor: '#fff',
+          animation: 'fade',
+          headerBackVisible: false,
+          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
         name="profile"
         component={ProfileScreen}
         options={{
-          title: 'Profile Screen',
-          animation: 'none',
+          title: 'My Profile',
+          headerStyle: {
+            backgroundColor: '#00C1B5'
+          },
+          headerTintColor: '#fff',
+          animation: 'fade',
+          headerBackVisible: false,
+          headerBackTitleVisible: false,
         }}
       />
       <Stack.Screen
         name="event_details"
         component={EventScreen}
         options={{
-          title: 'Event Screen',
-          animation: 'none',
+          title: '',
+          headerStyle: {
+            backgroundColor: '#F5F5F5'
+          },
+          headerTintColor: '#00C1B5',
+          animation: 'slide_from_bottom',
         }}
       />
       <Stack.Screen
         name="create_user"
         component={CreateUserScreen}
         options={{
-          title: 'Create User',
-          animation: 'fade',
+          title: '',
+          headerStyle: {
+            backgroundColor: '#CCCCCC'
+          },
+          headerTintColor: '#00C1B5',
         }}
       />
     </Stack.Navigator>
