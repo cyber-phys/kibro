@@ -1,4 +1,4 @@
-import { Anchor, Button, H1, H4, Input,TextArea,Paragraph, Separator, Sheet, XStack, YStack, Slider, H3, Text } from '@my/ui'
+import { Anchor, Button, H1, H4, Input,TextArea,Paragraph, Separator, Sheet, XStack, YStack, Slider, H3, Text, ScrollView } from '@my/ui'
 import React, { useState, useRef, useEffect } from 'react'
 import { useLink } from 'solito/link'
 import DatePicker from '@react-native-community/datetimepicker';
@@ -61,7 +61,9 @@ const Screen1 = ({ setScreen, formData, setFormData }) => {
       
       <H4 color='$text1' ta="left">Select tags</H4>
       <Text color='$text1' ta="left">Choose one primary tag and up to two secondary tags</Text>
-      <TagSelection tags={tags} onTagsSelected={handleTagsSelected}/>
+      <ScrollView>
+        <TagSelection tags={tags} onTagsSelected={handleTagsSelected}/>
+      </ScrollView>
 
       <Button size="$2" bg='$highlight1' onPress={handelNext}>Next</Button>
     </YStack>

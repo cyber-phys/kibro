@@ -60,7 +60,6 @@ export function TagSelection({ tags, onTagsSelected }: { tags: TagType[]; onTags
     }, [selectedTags]);
       
     return (
-    <ScrollView>
         <ContainerXL>
             <YStack gap="$4">
                 {Object.entries(groupedTags).map(([category, categoryTags]) => (
@@ -81,6 +80,5 @@ export function TagSelection({ tags, onTagsSelected }: { tags: TagType[]; onTags
                 ))}
             </YStack>
         </ContainerXL>
-    </ScrollView>
     );
 }
