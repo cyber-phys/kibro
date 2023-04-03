@@ -30,17 +30,20 @@ import { TagType } from '../../../types/tag';
 
 export function TagCardMini({ tag, isSelected, onPress }: { tag: TagType; isSelected: boolean; onPress: () => void; }) {
     return (
-        <ContainerSquare bg='$red10' space p="$4" margin="$2" onPress={onPress}>
-            <Grid/>
-            <Text>{tag.title} {isSelected && <Check />}</Text>
+        <ContainerSquare bg='$background1' space p="$4" margin="$2" jc='center' ai='center' onPress={onPress} position='relative'>
+            <YStack position="absolute" top={0} right={0} padding="$1">
+                <Text>{isSelected ? '☑︎' : '☐'}</Text>
+            </YStack>
+            <H4>{tag.icon ? tag.icon : '❓'}</H4>
+            <Text>{tag.title}</Text>
         </ContainerSquare>
     );  
 }
 
 export function TagCardTitle({ tag }: { tag: TagType }) {
     return (
-        <ContainerSquare bg='$red10' space p="$4" margin="$2">
-            <Grid/>
+        <ContainerSquare bg='$red7' space p="$4" margin="$2" jc='center' ai='center'>
+            <H4>{tag.icon ? tag.icon : '❓'}</H4>
             <Text>{tag.title}</Text>
         </ContainerSquare>
     );  
