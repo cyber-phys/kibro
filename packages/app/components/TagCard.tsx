@@ -36,3 +36,12 @@ export function TagCardMini({ tag, isSelected, onPress }: { tag: TagType; isSele
         </ContainerSquare>
     );  
 }
+
+export function TagCardTitle({ tag }: { tag: TagType }) {
+    return (
+        <ContainerSquare bg='$red10' space p="$4" margin="$2">
+            <Grid/>
+            <Text>{tag.title}</Text>
+        </ContainerSquare>
+    );  
+}

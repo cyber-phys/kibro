@@ -28,8 +28,13 @@ import { ContainerXL } from '../components/Container';
 import { EventType } from '../../../types/event';
 
 export function EventCardMini({ event }: { event: EventType }) {
+    const EventLink = (slug) => (
+        useLink({
+          href: `/event/${slug}`,
+    }));
+
     return (
-        <ContainerXL bg='$red10' space p="$4" margin="$4">
+        <ContainerXL bg='$red10' space p="$4" margin="$4" {...EventLink(event.id)}>
             <H4>{event.title}</H4>
             <Text>{formatTime(event.start_time)} - {formatTime(event.end_time)}</Text>
         </ContainerXL>
