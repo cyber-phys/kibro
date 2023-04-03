@@ -20,9 +20,9 @@ export function SignInScreen() {
     <YStack bg='$primary2' f={1} jc="center" ai="center" p="$4" space>
       <YStack space="$4" maw={600}>
         <H1 color='$primary1' ta="center">Sign In</H1>
-        <Button size="$6" >Continue with Apple</Button>
-        <Button size="$6" >Continue with Google</Button>
-        <Button size="$6" >Continue with Facebook</Button>
+        {/* <Button size="$6" >Continue with Apple</Button> */}
+        {/* <Button size="$6" >Continue with Google</Button> */}
+        {/* <Button size="$6" >Continue with Facebook</Button> */}
         <Button size="$6" {...emailSignInProps}>Continue with Email</Button>
       </YStack>
     </YStack>

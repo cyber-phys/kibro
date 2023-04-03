@@ -45,10 +45,10 @@ export function EmailSignUpScreen() {
       <YStack bg='$primary2' f={1} jc="center" ai="center" p="$4" space>
         <YStack space="$4" maw={600}>
           <H1 color='$primary1' ta="center">Create Account</H1>
-          <Input size="$6" placeholder='Email address' value={email} onChangeText={setEmail} />
-          <Input size="$6" placeholder='Password' value={password} onChangeText={setPassword} secureTextEntry />
-          <Input size="$6" placeholder='Confirm Password' value={confirmPassword} onChangeText={setConfirmPassword} secureTextEntry />
-          <Button size="$6" onPress={signupHandler}>Sign Up</Button>
+          <Input size="$6" f={1} minWidth="100%" placeholder='Email address' value={email} onChangeText={setEmail} />
+          <Input size="$6" f={1} minWidth="100%" placeholder='Password' value={password} onChangeText={setPassword} secureTextEntry />
+          <Input size="$6" f={1} minWidth="100%" placeholder='Confirm Password' value={confirmPassword} onChangeText={setConfirmPassword} secureTextEntry />
+          <Button size="$6" f={1} onPress={signupHandler}>Sign Up</Button>
         </YStack>
       </YStack>
       <YStack bg='$background1' f={1} jc="center" ai="center" p="$4" space>
