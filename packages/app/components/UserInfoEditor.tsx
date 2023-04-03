@@ -135,7 +135,7 @@ export function UserInfoEdit({ user }: { user: UserType}) {
             <Input size="$4" placeholder={user.home_city} onChangeText={(value) => setHomeCity(value)}></Input>
             </YStack>
 
-            <Button bg='$primary1' onPress={handleSubmit}>Submit</Button>
+            <Button color='$background1' bg='$primary1' onPress={handleSubmit}>Submit</Button>
         </ContainerXL>
         </>
     );  
