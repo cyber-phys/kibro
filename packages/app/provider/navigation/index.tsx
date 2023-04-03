@@ -17,6 +17,7 @@ export function NavigationProvider({ children }: { children: React.ReactNode }) 
               home: '',
               signin: 'signin',
               create_account: 'create_account',
+              create_user: 'create_user',
               email_signin: 'email_signin',
               email_signup: 'email_signup',
               create_event: 'create_event',

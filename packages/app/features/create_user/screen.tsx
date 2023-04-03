@@ -1,19 +1,28 @@
-import { Anchor, Button, H1, Input, Paragraph, Separator, Sheet, XStack, YStack } from '@my/ui'
-import React, { useEffect, useState } from 'react'
+import { Anchor, Button, H1, Input, Paragraph, Separator, Sheet, XStack, YStack, Spinner } from '@my/ui'
+import { useRouter } from 'solito/router';
+import { v4 as uuidv4 } from 'uuid'
+import React, { useState, useEffect } from 'react';
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 
-import { Navbar } from 'app/components/Navbar'
 import { UserInfoEdit } from 'app/components/UserInfoEditor'
 
-import { UserType } from '../../../../types/user';
-import { Alert } from 'react-native';
+import { UserType } from '../../../../types/user'
 
-export function ProfileScreen() {
+export function CreateUserScreen() {
   const [user, setUser] = useState<UserType | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
-
   const session = useSession();
   const supabase = useSupabaseClient();
+
+  const { push } = useRouter();
+
+  const newUser: UserType = {
+    id: session?.user.id,
+    first_name: '',
+    birthday: new Date(),
+    gender: '',
+    home_city: '',
+  };
 
   const getUser = async () => {
     try {
@@ -35,14 +44,19 @@ export function ProfileScreen() {
 
   useEffect(() => {
     getUser();
-  }, [session, supabase]);
+  }, [supabase, session]);
+
+  useEffect(() => {
+    if (user) {
+      push('/discover');
+    }
+  }, [user]);
 
   return (
     <>
     <YStack bg='$background3' f={1} jc="center" ai="center" p="$4" space>
-      {!isLoading && <UserInfoEdit user={user}/>}
+      {!isLoading && !user && <UserInfoEdit user={newUser} />}
     </YStack>
-    <Navbar/>
     </>
   )
 }

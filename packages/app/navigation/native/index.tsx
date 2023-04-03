@@ -11,12 +11,14 @@ import { CalendarScreen } from 'app/features/calendar/screen'
 import { CommunityScreen } from 'app/features/community/screen'
 import { ProfileScreen } from 'app/features/profile/screen'
 import { EventScreen } from 'app/features/event/detail-screen'
+import { CreateUserScreen } from 'app/features/create_user/screen'
 import { animations } from '@my/ui/dist/cjs/animations'
 
 const Stack = createNativeStackNavigator<{
   home: undefined
   signin: undefined
   create_account: undefined
+  create_user: undefined
   email_signin: undefined
   email_signup: undefined
   discover: undefined
@@ -113,6 +115,14 @@ export function NativeNavigation() {
         options={{
           title: 'Event Screen',
           animation: 'none',
+        }}
+      />
+      <Stack.Screen
+        name="create_user"
+        component={CreateUserScreen}
+        options={{
+          title: 'Create User',
+          animation: 'fade',
         }}
       />
     </Stack.Navigator>

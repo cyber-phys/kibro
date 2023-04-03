@@ -33,7 +33,7 @@ export function EmailSignInScreen() {
     if (error) {
       alert(error.message);
     } else {
-      push('/discover')
+      push('/create_user')
     }
   }
 
