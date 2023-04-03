@@ -43,7 +43,7 @@ export function EmailSignInScreen() {
       <YStack space="$4" maw={600} jc='center' ai='center'>
         <H1 color='$primary1' ta="center">Sign In</H1>
         <Input size="$6" f={1} minWidth="100%" placeholder='Email address' value={email} onChangeText={setEmail}/>
-        <Input size="$6" f={1} minWidth="100%" placeholder='Password' value={password} onChangeText={setPassword}/>
+        <Input size="$6" f={1} minWidth="100%" placeholder='Password' value={password} onChangeText={setPassword} secureTextEntry/>
         <Button size="$6" f={1} onPress={signinHandler} >Sign In</Button>
       </YStack>
     </YStack>

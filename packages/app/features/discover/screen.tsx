@@ -34,7 +34,7 @@ export function DiscoverScreen() {
   return (
     <>
     <ScrollView>
-      <YStack bg="$background3" f={1} jc='flex-start' ai='center' p="$4" space>
+      <YStack bg="$background2" f={1} jc='flex-start' ai='center' p="$4" space>
           {events.map((event, index) => (
             <EventCard key={event.id} event={event} bgColor={index % 2 === 0 ? 'grey' : 'white'}/>
           ))}
