@@ -15,7 +15,6 @@ export function NavigationProvider({ children }: { children: React.ReactNode }) 
             initialRouteName: 'home',
             screens: {
               home: '',
-              'user-detail': 'user/:id',
               signin: 'signin',
               create_account: 'create_account',
               email_signin: 'email_signin',
@@ -25,6 +24,7 @@ export function NavigationProvider({ children }: { children: React.ReactNode }) 
               calendar: 'calendar',
               community: 'community',
               profile: 'profile',
+              event_details: 'event/:id',
             },
           },
         }),

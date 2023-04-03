@@ -10,6 +10,8 @@ import { CreateEventScreen } from '../../features/create_event/screen'
 import { CalendarScreen } from 'app/features/calendar/screen'
 import { CommunityScreen } from 'app/features/community/screen'
 import { ProfileScreen } from 'app/features/profile/screen'
+import { EventScreen } from 'app/features/event/detail-screen'
+import { animations } from '@my/ui/dist/cjs/animations'
 
 const Stack = createNativeStackNavigator<{
   home: undefined
@@ -22,6 +24,9 @@ const Stack = createNativeStackNavigator<{
   calendar: undefined
   community: undefined
   profile: undefined
+  event_details: {
+    id: string
+  }
 }>()
 
 export function NativeNavigation() {
@@ -99,6 +104,14 @@ export function NativeNavigation() {
         component={ProfileScreen}
         options={{
           title: 'Profile Screen',
+          animation: 'none',
+        }}
+      />
+      <Stack.Screen
+        name="event_details"
+        component={EventScreen}
+        options={{
+          title: 'Event Screen',
           animation: 'none',
         }}
       />

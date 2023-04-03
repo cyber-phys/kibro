@@ -22,6 +22,7 @@ import {
     H6
   } from 'tamagui';
 import { ChevronLeft, Swords, ImagePlus, Grid, Edit, Menu, User } from '@tamagui/lucide-icons'
+import { Alert } from 'react-native';
 
 import { ContainerXL } from '../components/Container';
 import { EventType } from '../../../types/event';
@@ -45,8 +46,13 @@ export function EventCard({ event, bgColor }: { event: EventType; bgColor: 'grey
 
     const backgroundColor = bgColor === 'grey' ? '$background2' : '$background1';
 
+    const EventLink = (slug) => (
+      useLink({
+        href: `/event/${slug}`,
+      }));
+
     return (
-        <ContainerXL bg={backgroundColor} space p="$4">
+        <ContainerXL bg={backgroundColor} space p="$4" {...EventLink(event.id)}>
             <H4>{event.title}</H4>
             <XStack justifyContent='space-between'>
                 <Text>{startDate}</Text>
