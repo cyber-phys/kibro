@@ -11,6 +11,7 @@ export const customTokens = createTokens({
     background3: '#CCCCCC',
     highlight1: '#42A4FF',
     text1: '#5E5E5E',
+    categoryYellow: '#FFE871',
   },
   space: {
     ...tokens.space,

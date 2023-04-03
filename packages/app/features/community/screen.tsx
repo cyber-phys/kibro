@@ -9,7 +9,7 @@ export function CommunityScreen() {
     <>
     <YStack bg='$background3' f={1} jc="center" ai="center" p="$4" space>
       <YStack space="$4" maw={600}>
-        <H1 color='$primary1' ta="center">Community</H1>
+        <H1 color='$categoryYellow' ta="center">Community</H1>
       </YStack>
     </YStack>
     <Navbar/>

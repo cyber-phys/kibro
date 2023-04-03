@@ -64,7 +64,7 @@ export function TagSelection({ tags, onTagsSelected }: { tags: TagType[]; onTags
             <YStack gap="$4">
                 {Object.entries(groupedTags).map(([category, categoryTags]) => (
                     <React.Fragment key={category}>
-                        <H3 bc='green' marginBottom="$2">{category}</H3>
+                        <H3 bc='$categoryYellow' marginBottom="$2">{category}</H3>
                         <XStack flexWrap='wrap' gap="$2">
                             {(categoryTags as TagType[]).map((tag, index) => (
                                 <TagCardMini 
