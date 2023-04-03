@@ -55,8 +55,8 @@ export function CreateUserScreen() {
   return (
     <>
     <YStack bg='$background3' f={1} jc="center" ai="center" p="$4" space>
-      <H4 alignSelf='flex-start'>Tell us about yourself</H4>
-      <Text alignSelf='flex-start'>Please note that this information may only be changed once every six months.</Text>
+      {!isLoading && !user && <H4 alignSelf='flex-start'>Tell us about yourself</H4>}
+      {!isLoading && !user && <Text alignSelf='flex-start'>Please note that this information may only be changed once every six months.</Text>}
       {!isLoading && !user && <UserInfoEdit user={newUser} />}
     </YStack>
     </>
