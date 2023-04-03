@@ -106,6 +106,29 @@ export interface Database {
           user_id?: string
         }
       }
+      users: {
+        Row: {
+          birthday: string
+          first_name: string
+          gender: Database["public"]["Enums"]["gender"]
+          home_city: string
+          id: string
+        }
+        Insert: {
+          birthday: string
+          first_name: string
+          gender: Database["public"]["Enums"]["gender"]
+          home_city: string
+          id: string
+        }
+        Update: {
+          birthday?: string
+          first_name?: string
+          gender?: Database["public"]["Enums"]["gender"]
+          home_city?: string
+          id?: string
+        }
+      }
     }
     Views: {
       [_ in never]: never
@@ -114,7 +137,7 @@ export interface Database {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      gender: "male" | "female" | "non-binary"
     }
     CompositeTypes: {
       [_ in never]: never
