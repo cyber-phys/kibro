@@ -69,14 +69,17 @@ export function UserInfoEdit({ user }: { user: UserType}) {
 
     return (
         <>
-        <ContainerXL>
+        <ContainerXL f={1} jc='space-around'>
+            <YStack>
             <H4 color='$text1' ta="left">First Name</H4>
             <Input size="$4" placeholder={user.first_name} onChangeText={(value) => setFirstName(value)}></Input>
-
-            <H4 color='$text1' ta="left">Birth Day</H4>
+            </YStack>
+            
+            <XStack>
+            <H4 color='$text1' paddingRight="$4">Birth Day</H4>
             <DatePicker
             modal
-            mode='datetime'
+            mode='date'
             open={dateOpen}
             value={birthDate}
             onConfirm={(birthDate) => {
@@ -87,8 +90,12 @@ export function UserInfoEdit({ user }: { user: UserType}) {
                 setDateOpen(false)
             }}
             />
+            </XStack>
 
+            <YStack>
             <H4 color='$text1' ta="left">Gender</H4>
+            <XStack>
+            <YStack f={1}>
             <Checkbox size="$4" onCheckedChange={() => setGender('female')} checked={gender === 'female'}>
                 <Checkbox.Indicator>
                     <Check />
@@ -97,7 +104,9 @@ export function UserInfoEdit({ user }: { user: UserType}) {
             <Label>
                 Female
             </Label>
+            </YStack>
 
+            <YStack f={1}>
             <Checkbox size="$4" onCheckedChange={() => setGender('male')} checked={gender === 'male'}>
                 <Checkbox.Indicator>
                     <Check />
@@ -106,7 +115,9 @@ export function UserInfoEdit({ user }: { user: UserType}) {
             <Label>
                 Male
             </Label>
+            </YStack>
 
+            <YStack f={1}>
             <Checkbox size="$4" onCheckedChange={() => setGender('non-binary')} checked={gender === 'non-binary'}>
                 <Checkbox.Indicator>
                     <Check />
@@ -115,11 +126,16 @@ export function UserInfoEdit({ user }: { user: UserType}) {
             <Label>
                 Non-Binary
             </Label>
+            </YStack>
+            </XStack>
+            </YStack>
 
+            <YStack>
             <H4 color='$text1' ta="left">Home City</H4>
             <Input size="$4" placeholder={user.home_city} onChangeText={(value) => setHomeCity(value)}></Input>
+            </YStack>
 
-            <Button onPress={handleSubmit}>Submit</Button>
+            <Button bg='$primary1' onPress={handleSubmit}>Submit</Button>
         </ContainerXL>
         </>
     );  

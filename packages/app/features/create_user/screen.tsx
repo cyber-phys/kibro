@@ -1,4 +1,4 @@
-import { Anchor, Button, H1, Input, Paragraph, Separator, Sheet, XStack, YStack, Spinner } from '@my/ui'
+import { Anchor, Button, H1, Input, Paragraph, Separator, Sheet, XStack, YStack, Spinner, Text, H3, H4 } from '@my/ui'
 import { useRouter } from 'solito/router';
 import { v4 as uuidv4 } from 'uuid'
 import React, { useState, useEffect } from 'react';
@@ -55,6 +55,8 @@ export function CreateUserScreen() {
   return (
     <>
     <YStack bg='$background3' f={1} jc="center" ai="center" p="$4" space>
+      <H4 alignSelf='flex-start'>Tell us about yourself</H4>
+      <Text alignSelf='flex-start'>Please note that this information may only be changed once every six months.</Text>
       {!isLoading && !user && <UserInfoEdit user={newUser} />}
     </YStack>
     </>
