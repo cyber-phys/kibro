@@ -24,7 +24,7 @@ import {
 import { ChevronLeft, Swords, ImagePlus, Grid, Edit, Menu, User } from '@tamagui/lucide-icons'
 
 import { formatTime } from './DateTools';
-import { ContainerXL } from '../components/Container';
+import { Container, ContainerMini, ContainerXL } from '../components/Container';
 import { EventType } from '../../../types/event';
 
 export function EventCardMini({ event }: { event: EventType }) {
@@ -34,9 +34,10 @@ export function EventCardMini({ event }: { event: EventType }) {
     }));
 
     return (
-        <ContainerXL bg='$red10' space p="$4" margin="$4" {...EventLink(event.id)}>
-            <H4>{event.title}</H4>
-            <Text>{formatTime(event.start_time)} - {formatTime(event.end_time)}</Text>
-        </ContainerXL>
+        <Container maxWidth='$10' bg='$green7' p='$0.25' {...EventLink(event.id)}>
+            <Text p='$2' size='$2'>{event.title}</Text>
+            <Text p='$2' size='$4'>{formatTime(event.start_time)} - </Text>
+            <Text p='$2' size='$4'>{formatTime(event.end_time)}</Text>
+        </Container>
     );  
 }

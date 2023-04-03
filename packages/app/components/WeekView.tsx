@@ -55,7 +55,8 @@ export function WeekViewScreen() {
                     })}
             </H4>
             <ScrollView horizontal>
-            <XStack jc='center' ai='center' key={index} space>
+
+            <XStack flex={1} paddingLeft='$4' paddingVertical='$1.5' separator space key={index}>
                 {events
                 .filter((event) => {
                 const eventDate = new Date(event.start_time);
@@ -65,8 +66,10 @@ export function WeekViewScreen() {
                 .map((event) => (
                 <EventCardMini key={event.id} event={event} />
                 ))}
+
             </XStack>
             </ScrollView>
+
         </XStack>
         <Separator als='stretch' width="100%" />
         </>
