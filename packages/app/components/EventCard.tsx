@@ -24,26 +24,11 @@ import {
 import { ChevronLeft, Swords, ImagePlus, Grid, Edit, Menu, User } from '@tamagui/lucide-icons'
 import { Alert } from 'react-native';
 
+import { formatDate, formatTime } from '../components/DateTools';
 import { ContainerXL } from '../components/Container';
 import { EventType } from '../../../types/event';
 
 export function EventCard({ event, bgColor }: { event: EventType; bgColor: 'grey' | 'white' }) {
-    const startDate = new Date(event.start_time).toLocaleDateString('en-US', {
-        month: '2-digit',
-        day: '2-digit',
-        year: '2-digit',
-      });
-      const startTimeCompact = new Date(event.start_time).toLocaleTimeString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true,
-      });
-      const endTimeCompact = new Date(event.end_time).toLocaleTimeString('en-US', {
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true,
-      });
-
     const backgroundColor = bgColor === 'grey' ? '$background2' : '$background1';
 
     const EventLink = (slug) => (
@@ -55,8 +40,8 @@ export function EventCard({ event, bgColor }: { event: EventType; bgColor: 'grey
         <ContainerXL bg={backgroundColor} space p="$4" {...EventLink(event.id)}>
             <H4>{event.title}</H4>
             <XStack justifyContent='space-between'>
-                <Text>{startDate}</Text>
-                <Text>{startTimeCompact} - {endTimeCompact}</Text>
+                <Text>{formatDate(event.start_time)}</Text>
+                <Text>{formatTime(event.start_time)} - {formatTime(event.end_time)}</Text>
             </XStack>
             <Text>{event.location}</Text>
             <Text>{event.description}</Text>
