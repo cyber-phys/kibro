@@ -52,7 +52,7 @@ const Screen1 = ({ setScreen, formData, setFormData }) => {
 
   return (
     <>
-    <YStack bg='$background3' f={1} p="$4" space>
+    <YStack bg='$background3' f={1} p="$4" jc='space-between' space>
       <H4 color='$text1' ta="left">Hangout Title</H4>
       <Input size="$4" onChangeText={(value) => setTitle(value)}></Input>
 
@@ -65,7 +65,7 @@ const Screen1 = ({ setScreen, formData, setFormData }) => {
         <TagSelection tags={tags} onTagsSelected={handleTagsSelected}/>
       </ScrollView>
 
-      <Button size="$2" bg='$highlight1' onPress={handelNext}>Next</Button>
+      <Button size="$2" maxWidth={150} alignSelf='flex-end' color='$background1' bg='$highlight1' onPress={handelNext}>Next ></Button>
     </YStack>
     <Navbar/>
     </>
@@ -91,17 +91,19 @@ const Screen2 = ({ setScreen, formData, setFormData }) => {
 
   return (
     <>
-    <YStack bg='$background3' f={1} p="$4" space>
-      <H4 color='$text1' ta="left">With how many people?</H4>
-      <H4 color='$text1' ta="left">{maxPeople}</H4>
-      <Slider defaultValue={[2]} min={2} max={100} step={1} onValueChange={handlemaxPeopleChange}>
+    <YStack bg='$background3' f={1} p="$4" jc='space-between' space>
+      <YStack>
+      <H4 color='$text1' ta="left">With how many people? {maxPeople}</H4>
+      <Slider marginTop={30} defaultValue={[2]} min={2} max={100} step={1} onValueChange={handlemaxPeopleChange}>
         <Slider.Track>
           <Slider.TrackActive />
         </Slider.Track>
         <Slider.Thumb index={0} circular elevate />
       </Slider>
+      </YStack>
 
-      <H4 color='$text1' ta="left">Start Time</H4>
+      <XStack>
+      <H4 color='$text1' ta="left" paddingRight={10}>Start Time</H4>
       <DatePicker
         modal
         mode='datetime'
@@ -115,8 +117,10 @@ const Screen2 = ({ setScreen, formData, setFormData }) => {
           setStartTimeOpen(false)
         }}
       />
+      </XStack>
 
-      <H4 color='$text1' ta="left">End Time</H4>
+      <XStack>
+      <H4 color='$text1' ta="left" paddingRight={10}>End Time</H4>
       <DatePicker
         modal
         mode='datetime'
@@ -130,9 +134,11 @@ const Screen2 = ({ setScreen, formData, setFormData }) => {
           setEndTimeOpen(false)
         }}
       />
+      </XStack>
       
-      <Button size="$2" bg='$highlight1' onPress={handelNext}>Next</Button>
+      <Button size="$2" maxWidth={150} alignSelf='flex-end' color='$background1' bg='$highlight1' onPress={handelNext}>Next ></Button>
     </YStack>
+    <Navbar/>
     </>
   )
 }
@@ -149,11 +155,14 @@ const Screen3 = ({ setScreen, formData, setFormData, submitRequest }) => {
 
   return (
     <>
-    <YStack bg='$background3' f={1} p="$4" space>
+    <YStack bg='$background3' f={1} p="$4" jc='space-between' space>
+      <YStack>
       <H4 color='$text1' ta="left">Event location</H4>
       <Input size="$4" onChangeText={(value) => setLocation(value)}></Input>
-      <Button size="$2" bg='$highlight1' onPress={handelNext}>Create Event</Button>
+      </YStack>
+      <Button size="$2" maxWidth={150} alignSelf='flex-end' color='$background1' bg='$highlight1' onPress={handelNext}>Create Event</Button>
     </YStack>
+    <Navbar/>
     </>
   )
 }
