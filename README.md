@@ -1,7 +1,7 @@
 # Kibro Monorepo 🐢
 ## 🔦 About
 
-This is the monorepo for Kibro. Kibro is designed to disconnect people from their phones by foucsing on ephemeral events.
+This is the monorepo for Kibro. Kibro is designed to disconnect people from their phones by focusing on ephemeral events.
 
 ## 📦 Included packages
 This repo is based on the [Tamagui + Solito + Next + Expo Monorepo](https://github.com/tamagui/tamagui/tree/master/starters/next-expo-solito).
