@@ -1,4 +1,4 @@
-# Kibro Monorepo
+# Kibro Monorepo 🐢
 ## 🔦 About
 
 This is the monorepo for Kibro. Kibro is designed to disconnect people from their phones by foucsing on ephemeral events.
